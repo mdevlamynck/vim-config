@@ -69,6 +69,11 @@ if dein#load_state('~/.vim/bundle/')
 	" Elm
 	call dein#add('ElmCast/elm-vim', {'on_ft': 'elm'})
 
+	" Haskell
+	call dein#add('eagletmt/ghcmod-vim', {'on_ft': 'haskell'}) " Server lang integration
+	call dein#add('eagletmt/neco-ghc', {'on_ft': 'haskell'}) " Autocompletion via youcompleteme or neocomplete
+	call dein#add('bitc/lushtags', {'on_ft': 'haskell', 'build': 'stack build && stack install'}) " Tagbar support for haskell
+
 	" End
 	call dein#end()
 	call dein#save_state()

@@ -3,6 +3,7 @@ source ~/.vim/config/plugin/easymotion.vim
 source ~/.vim/config/plugin/elm-vim.vim
 source ~/.vim/config/plugin/fugitive.vim
 source ~/.vim/config/plugin/gundo.vim
+source ~/.vim/config/plugin/neco-ghc.vim
 source ~/.vim/config/plugin/nerdtree.vim
 source ~/.vim/config/plugin/omnicompletion.vim
 source ~/.vim/config/plugin/powerline.vim
