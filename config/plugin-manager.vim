@@ -1,7 +1,7 @@
 " Setup Dein
 filetype plugin indent on
 syntax enable
-set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim/
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 " Init
 if dein#load_state('~/.vim/bundle/')
@@ -20,12 +20,12 @@ if dein#load_state('~/.vim/bundle/')
 
 	" Interface
 	call dein#add('mhinz/vim-startify') " Startup menu
-	call dein#add('yuttie/comfortable-motion.vim') " Physics based scroll for <C-d> <C-u> <C-f> <C-b>
-	call dein#add('tomasr/molokai') " Color scheme
+	" call dein#add('yuttie/comfortable-motion.vim') " Physics based scroll for <C-d> <C-u> <C-f> <C-b>
 	call dein#add('tomasr/molokai') " Color scheme
 	call dein#add('scrooloose/nerdtree') " Side pannel showing the filesystem
 	call dein#add('jistr/vim-nerdtree-tabs') " Better integrations with tabs for nerdtree
 	call dein#add('majutsushi/tagbar') " Side pannel showing symbols
+	call dein#add('wsdjeg/dein-ui.vim') " Ui for the plugin manager
 
 	" Search
 	call dein#add('adonis0147/searcher.vim') " Integration for searching with rg
@@ -36,7 +36,7 @@ if dein#load_state('~/.vim/bundle/')
 	" Editing
 	call dein#add('sjl/gundo.vim') " Adds an undo tree pannel
 	call dein#add('Lokaltog/vim-easymotion') " More motions, prefixed by <leader>
-	call dein#add('Valloric/YouCompleteMe', { 'build': './install.sh --clang-completer' }) " Autocompletion
+	call dein#add('Valloric/YouCompleteMe', { 'build': './install.sh' }) " Autocompletion
 	call dein#add('junegunn/vim-easy-align') " Quickly align stuff
 	call dein#add('Houl/repmo-vim') " Repeats motions even if a count was given
 	call dein#add('tpope/vim-abolish') " Automatic typo fixes, search and replace with different pattern at once, case swapping
@@ -67,12 +67,14 @@ if dein#load_state('~/.vim/bundle/')
 	call dein#add('rust-lang/rust.vim', {'on_ft': 'rust'})
 
 	" Elm
-	call dein#add('ElmCast/elm-vim', {'on_ft': 'elm'})
+	call dein#add('adiron/elm-vim', {'on_ft': 'elm'})
 
 	" Haskell
 	call dein#add('eagletmt/ghcmod-vim', {'on_ft': 'haskell'}) " Server lang integration
 	call dein#add('eagletmt/neco-ghc', {'on_ft': 'haskell'}) " Autocompletion via youcompleteme or neocomplete
-	call dein#add('bitc/lushtags', {'on_ft': 'haskell', 'build': 'stack build && stack install'}) " Tagbar support for haskell
+	call dein#add('bitc/lushtags', {'on_ft': 'haskell', 'build': 'stack build --system-ghc && stack install --system-ghc'}) " Tagbar support for haskell
+
+	call dein#disable('yuttie/comfortable-motion.vim')
 
 	" End
 	call dein#end()
